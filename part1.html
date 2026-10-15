@@ -1,11 +1,158 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Part 1 - Basic HTML Forms</title>
+    <title>Part 1 - Deadline Resurrection</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        body {
+            background-color: #f5f6f8;
+        }
+
+        .chat-container {
+            max-width: 750px;
+            margin: 40px auto;
+            background: white;
+            border: 1px solid #dee2e6;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .chat-header {
+            padding: 18px 22px;
+            border-bottom: 1px solid #dee2e6;
+        }
+
+        .chat-header h5 {
+            margin: 0;
+        }
+
+        .chat-header p {
+            margin: 4px 0 0;
+            color: #6c757d;
+            font-size: 14px;
+        }
+
+        .chat-title {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 14px;
+        }
+
+        .university-logo {
+            width: 32px;
+            height: 32px;
+            object-fit: contain;
+        }
+
+        .professor-avatar {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 1px solid #dee2e6;
+            flex-shrink: 0;
+        }
+
+        .professor-info {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .chat-gif {
+            display: block;
+            width: 100%;
+            max-width: 240px;
+            max-height: 300px;
+            object-fit: contain;
+            border-radius: 8px;
+        }
+
+        .chat-messages {
+            padding: 22px;
+        }
+
+        .message {
+            max-width: 80%;
+            margin-bottom: 18px;
+        }
+
+        .message-name {
+            margin-bottom: 4px;
+            color: #6c757d;
+            font-size: 13px;
+        }
+
+        .message-text {
+            padding: 12px 15px;
+            border: 1px solid #dee2e6;
+            border-radius: 8px;
+            font-size: 14px;
+        }
+
+        .student-message {
+            margin-left: auto;
+            text-align: right;
+        }
+
+        .student-message .message-text {
+            background: #e8efff;
+            border-color: #d5e0ff;
+            text-align: left;
+        }
+
+        .appeal-form {
+            padding: 22px;
+            border-top: 1px solid #dee2e6;
+        }
+
+        .appeal-form label {
+            display: block;
+            margin-bottom: 6px;
+            font-weight: 500;
+        }
+
+        .appeal-form input,
+        .appeal-form textarea {
+            width: 100%;
+            padding: 10px 12px;
+            border: 1px solid #ced4da;
+            border-radius: 5px;
+            font: inherit;
+        }
+
+        .appeal-form input:focus,
+        .appeal-form textarea:focus {
+            outline: 2px solid #cbd8ff;
+            border-color: #5379e7;
+        }
+
+        .appeal-form textarea {
+            resize: vertical;
+        }
+
+        @media (max-width: 576px) {
+            .chat-container {
+                margin: 24px auto;
+            }
+
+            .message {
+                max-width: 95%;
+            }
+
+            .chat-messages,
+            .appeal-form {
+                padding: 16px;
+            }
+        }
+    </style>
 </head>
+
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container">
@@ -21,28 +168,86 @@
         </div>
     </nav>
 
-    <div class="container mt-5">
-        <h2>Part 1. Basic HTML Forms</h2>
-        <hr>
-        
-        <form action="#" method="GET">
-            <div style="margin-bottom: 15px;">
-                <label for="name">Name:</label><br>
-                <input type="text" id="name" name="name" required maxlength="50">
+    <main class="container">
+        <div class="chat-container">
+
+            <div class="chat-header">
+                <div class="chat-title">
+                    <img src="images/logo.png" alt="AITU Logo" class="university-logo">
+                    <h5>Deadline Resurrection</h5>
+                </div>
+
+                <div class="professor-info">
+                    <img src="images/professor-profile-pic.jpg" alt="Professor Deadlinekyzy" class="professor-avatar">
+
+                    <div>
+                        <div class="fw-semibold">Professor Deadlinekyzy</div>
+                        <p class="mb-0 text-secondary small">Web Development</p>
+                    </div>
+                </div>
             </div>
-            
-            <div style="margin-bottom: 15px;">
-                <label for="email">Email:</label><br>
-                <input type="email" id="email" name="email" required>
+
+            <div class="chat-messages">
+                <div class="message">
+                    <div class="message-name">Professor Deadlinekyzy</div>
+                    <div class="message-text">
+                        The deadline has passed. Late submissions will not be accepted.
+                    </div>
+                </div>
+
+                <div class="message student-message">
+                    <div class="message-name">You</div>
+                    <div class="message-text">
+                        Professor, please give me one last chance. I have an explanation!
+                    </div>
+                </div>
+
+                <div class="message student-message">
+                    <div class="message-name">You</div>
+
+                    <div class="message-text">
+                        <img src="images/begging.jpg" alt="Student reaction GIF" class="chat-gif">
+                    </div>
+                </div>
+
+                <div class="message">
+                    <div class="message-name">Professor Deadlinekyzy</div>
+                    <div class="message-text">
+                        Submit your explanation below. I make no promises.
+                    </div>
+                </div>
             </div>
-            
-            <div style="margin-bottom: 15px;">
-                <label for="message">Message:</label><br>
-                <textarea id="message" name="message" rows="4" required></textarea>
+
+            <div class="appeal-form">
+                <h6 class="mb-3">Submit Your Appeal</h6>
+
+                <form action="#" method="GET">
+                    <div class="mb-3">
+                        <label for="name">Name:</label>
+                        <input type="text" id="name" name="name" placeholder="Bekarys Zharylgassyn (for example)"
+                            maxlength="50" required>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email"
+                            placeholder="thepolice2007pplay@gmail.com (for example)" required>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="message">Your explanation:</label>
+                        <textarea id="message" name="message" rows="4"
+                            placeholder="Explain why your deadline should be restored..." required></textarea>
+                    </div>
+
+                    <button type="submit" class="btn btn-dark">
+                        Beg for Mercy
+                    </button>
+                </form>
             </div>
-            
-            <button type="submit">Submit</button>
-        </form>
-    </div>
+
+        </div>
+    </main>
 </body>
+
 </html>

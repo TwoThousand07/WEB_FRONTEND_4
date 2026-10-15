@@ -11,5 +11,3 @@ This project demonstrates the creation of user-friendly forms using HTML and Boo
 - Part 1: Basic HTML Form with HTML5 built-in validation.
 - Part 2: Bootstrap Contact Form with custom validation styles.
 - Part 3: Advanced Registration Form using Bootstrap Grid and validation.
-
-The project is hosted on GitHub Pages.
